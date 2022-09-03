@@ -1,9 +1,8 @@
 import React from 'react'
 
-import data from '.data.json';
+import data from './data.json';
 
-import Item from '.Item';
-
+import Item from './Item';
 
 // Debemos importar el listado de objetos del archivo JSON para usarlos como array a la hora de crear cada Item.
 // El componente Listado es el padre de:
@@ -15,8 +14,8 @@ import Item from '.Item';
 export default function Listado(props) {
   return (
     <div className='container'>
-      {data.map((producto) => (
-                  <Item data={item} method={props.updateCar}></Item>
+      {data.map((item) => (
+                  <Item data={item} method={props.aumentaCantidad}></Item>
       )
       )
       }

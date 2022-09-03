@@ -15,7 +15,7 @@ export default function Cabecera(props) {
       <div>
 
         <h1>Carrito de compras</h1>
-        <p>Cantidad de productos <span>{props.carritoDeCompras}</span></p>
+        <p>Cantidad de productos  <span>{props.carritoDeCompras}</span></p>
 
       </div>
     </header>

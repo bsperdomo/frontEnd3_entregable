@@ -13,11 +13,21 @@ import { useState } from "react";
 
 export default function Item(props) {
 
-  const [cantStock, setCantStock] = useState(props.stock);
+  const [cantStock, setCantStock] = useState(props.data.stock);
+
+  const comprar = () => {
+    setCantStock(cantStock - 1);
+
+  };
 
   return (
     <div className='producto'>
-      {/* maquetar Item aquí */}
+      <h3>{props.data.producto.nombre}</h3>
+      <p>{props.data.producto.descripcion}</p>
+      <h5>En stock: {cantStock > 0 ? cantStock : <span>agotado</span> } </h5>
+      <button onClick={comprar} disabled={cantStock < 1 ? true : false}>
+        {cantStock < 1 ? 'sin stock' : 'comprar'}
+      </button>
     </div>
   )
 }
